@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Platzi-Video</title>
+  </head>
+
+  <style>
+    .body {
+      background-color: #393e41;
+      font-family: "Roboto", sans-serif;
+      margin: 0px;
+      /* Página: CSS Gradient */
+    }
+
+    /*  TODO: Try to align and center elements only using Flexbox. Update: Success!!! */
+    
+    /* Header Logo: */
+
+    .header {
+      align-items: center;
+      display: flex;
+      height: 90px;
+      justify-content: space-between;
+      width: 100%;
+      
+    }
+
+    .header__img--logo {
+      animation: slidein 2s;
+      margin-top: 10px;
+      margin-left: 30px;
+      width: 200px;
+    }
+
+    .header__img--logo:hover {
+      opacity: 0.9;
+    }
+
+    @keyframes slidein {
+      from {
+        margin-left: 20%;
+        margin-top: 10px;
+        width: 200px;
+      }
+
+      to {
+        margin-left: 30px;
+        margin-top: 10px;
+        width: 200px;
+      }
+    }
+
+    @keyframes opacityd {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0.5;
+      }
+    }
+
+    /* Header -> Cuenta: */
+
+    .account {
+      animation: opacityd 2s;
+      box-sizing: border-box;
+      margin-right: 40px;
+      margin-top: 10px;
+      width: 100px;
+    }
+
+    .account__icon {
+      margin-bottom: 5px;
+      margin-right: 15px;
+    }
+
+    .account__text {
+      color: #e7e5df;
+    }
+
+    .account__text--ul {
+      display: none;
+      list-style: none;
+      margin-top: 0px;
+      padding-left: 0px;
+      padding-top: 15px;
+      position: absolute;
+      width: 100px;
+    }
+
+    .account__text--ul li {
+      margin-bottom: 5px;
+      text-align: right;
+    }
+
+    .account__text--ul li a {
+      color: #30302f;
+      text-decoration: none;
+    }
+
+    .account__text--ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .account__profile {
+      display: flex;
+    }
+
+    .account:hover ul,
+    ul:hover {
+      display: block;
+    }
+    /* Buscador: */
+
+    .searching{
+        background-image: url(/posters/Zootopia_City_Full.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 120%;
+        animation: opacityd 2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 65vh;
+    }
+
+    .searching__title{
+        color: #444242;
+        font-size: 30px;
+        margin-top: 8%;
+    }
+
+    .searching__input{
+        background-color: #f5f5f5;
+        border: #333333 2px solid;
+        border-radius: 25px;
+        color: #393e41;
+        font-family: "Roboto", sans-serif;
+        font-size: 25px;
+        margin: 25px 0px;
+        outline: none;
+        height: 50px;
+        padding-left: 20px;
+        width: 70%; 
+    }
+
+    .searching__input::placeholder{
+        color: #393e41;
+        opacity: 0.7;
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+    }
+
+    /*Trends carousel: */
+    .trends{
+      margin-top: 2%;
+    }
+
+    .subtitle{
+      color: #e7e5df;
+      font-size: 20px;
+      margin-left: 20px;
+      margin-bottom: 0px;
+    }
+
+    .trends__carousel{
+      align-items: center;
+      height: 300px;
+      margin-top: 5px;
+      justify-content: center;
+      overflow-x: scroll;
+      width: 95%;
+      white-space: nowrap;
+      padding: 3% 2%;
+    }
+
+    ::-webkit-scrollbar {
+    display: none;
+}
+
+    .carousel__item{
+      background-color: black;
+      display: inline-block; 
+      margin-right: 10px;
+      width: 200px;
+      height: 250px;
+      border-radius: 10%;
+      position: relative;
+      transform-origin: center left;
+      transition: 450ms all;
+      overflow: hidden;
+    }
+    
+    .item-bc{
+      width: 200px;
+      height: auto;
+      border-radius: 10%;
+      
+    }
+
+    
+
+    .item-bc:hover{
+      animation: opacityd 0.5s;
+      opacity: 0.5;
+
+    }
+
+    .carousel__item:hover .item__details{
+      display: inline-block;
+      
+    }
+
+    .carousel__item:hover ~ .carousel__item{
+      transform: translate3d(40px,0,0);
+    }
+
+    .trends__carousel:hover .carousel__item{
+        opacity: 1;
+    }
+
+    .trends__carousel:hover .carousel__item:hover{
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    .item__details{
+      display: none;
+      font-family: "Roboto", sans-serif;
+      height: 30px;
+      position: absolute;
+      width: 30px;
+      left: 5%;
+      top: 70%;
+      text-align: right;
+    }
+
+    .item__icon{
+      width: 25px;
+      height: 25px;
+    }
+
+    .item__icon:hover{
+      transform: scale(1.2);
+    }
+
+    .item__title{
+      color: #e7e5df;
+      font-size: 15px;
+      margin: 5px 0px;
+    }
+
+    .item__subtitle{
+      color: #e7e5df;
+      font-size: 10px;
+      margin: 3px 0px;
+    }
+
+
+   
+
+  </style>
+
+  <body class="body">
+    <header class="header">
+      <img
+        class="header__img--logo"
+        src="https://raw.githubusercontent.com/platzi/PlatziVideo/feature/react/src/assets/static/logo-platzi-video-BW2.png"
+        alt="Logotipo de Platzi-Video"
+      />
+      <div class="account">
+        <!--Bloque-->
+        <div class="account__profile">
+          <img src="./user-icon.png" alt="user-icon" class="account__icon" />
+          <!--Elemento 1 -->
+          <p class="account__text">Perfil</p>
+          <!--Elemento 2 -->
+        </div>
+        <ul class="account__text--ul">
+          <!--Elemento 3-->
+          <li><a href="#">Cuenta</a></li>
+          <li><a href="#">Cerrar Sesión</a></li>
+        </ul>
+      </div>
+    </header>
+    <section class="searching">
+        <h2 class="searching__title">¿Qué quieres ver hoy?</h2>
+        <input class="searching__input" type="search" placeholder="Buscar..."> 
+    </section>
+    <section class="trends">
+        <h2 class="subtitle">Tendencias: </h2>
+        <div class="trends__carousel">
+          <div class="carousel__item">
+            <img class="item-bc"  src="./posters/doce_anios.jpg" alt="childofmen">
+            <div class="item__details">
+              <img class="item__icon" src="/icons/play.png" alt="play"/>
+              <img class="item__icon" src="/icons/plus.png" alt="plus"/>
+              <p class="item__title">12 años de esclavitud</p>
+              <p class="item__subtitle">150m 16+ Drama, Ficción</p>
+          </div>
+        </div>
+
+        <div class="carousel__item">
+          <img class="item-bc"  src="./posters/gravity.jpg" alt="gravity">
+            <div class="item__details">
+              <img class="item__icon" src="/icons/play.png" alt="play"/>
+              <img class="item__icon" src="/icons/plus.png" alt="plus"/>
+              <p class="item__title">Gravity</p>
+              <p class="item__subtitle">129m 12+ Ciencia, Drama</p>
+            </div> 
+        </div>
+        <div class="carousel__item">
+          <img class="item-bc"  src="./posters/interestellar.jpg" alt="interestellar">
+          <div class="item__details">
+              <img class="item__icon" src="/icons/play.png" alt="play"/>
+              <img class="item__icon" src="/icons/plus.png" alt="plus"/>
+              <p class="item__title">Interestellar</p>
+              <p class="item__subtitle">129m 12+ Ciencia, Ficción</p>
+            </div> 
+        </div>
+        
+        <div class="carousel__item">
+          <img class="item-bc"  src="./posters/pablo.jpg" alt="pablo">
+          <div class="item__details">
+            
+            <img class="item__icon" src="/icons/play.png" alt="play"/>
+            <img class="item__icon" src="/icons/plus.png" alt="plus"/>
+            <p class="item__title">Pablo, apóstol de Cristo</p>
+            <p class="item__subtitle">129m 12+ Histórico, Drama</p>
+          </div> 
+       </div>
+       
+       <div class="carousel__item">
+        <img class="item-bc"  src="./posters/soul.jpg" alt="doce_anios">
+        <div class="item__details">
+           <img class="item__icon" src="/icons/play.png" alt="play"/>
+           <img class="item__icon" src="/icons/plus.png" alt="plus"/>
+           <p class="item__title">Soul</p>
+           <p class="item__subtitle">129m 12+ Drama</p>
+         </div> 
+
+      </div><div class="carousel__item">
+      <img class="item-bc"  src="./posters/intensamente.jpg" alt="intensamente">
+      <div class="item__details">  
+         <img class="item__icon" src="/icons/play.png" alt="play"/>
+         <img class="item__icon" src="/icons/plus.png" alt="plus"/>
+         <p class="item__title">Intensamente</p>
+         <p class="item__subtitle">129m 12+ Infantil</p>
+       </div> 
+      </div>
+      
+      <div class="carousel__item">
+      <img class="item-bc"  src="./posters/tomyyemi.jpg" alt="tomyyemi">
+      <div class="item__details">  
+       <img class="item__icon" src="/icons/play.png" alt="play"/>
+       <img class="item__icon" src="/icons/plus.png" alt="plus"/>
+       <p class="item__title">Tom y Jerry: La película</p>
+       <p class="item__subtitle">129m 12+ Infantil</p>
+      </div> 
+ </div>
+        </div>
+    </section>
+  </body>
+</html>
